@@ -1,0 +1,10 @@
+@import './settings';
+@import './base';
+@import './char';
+
+.App {
+  color: white;
+  background-color: $dark;
+  min-height: 100vh;
+  font-family: 'Oswald', sans-serif;
+}
