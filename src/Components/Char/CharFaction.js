@@ -1,16 +1,19 @@
 import React from 'react';
-import {Container,Row,Col} from 'react-bootstrap';
-import master from '../../Assets/master.png'
+import {Image} from 'react-bootstrap';
 
 function CharFactionComponent({value, label}) {
-  return (
-    <div className='char-faction d-flex px-2'>
-      <img src={master} alt="faction-icon" className='char-faction__img' />
-      <div className='pt-1'>
-        <b className='char-faction__label'>{label}:</b> {value}
+  if (value && label) {
+    return (
+      <div className={`char-faction__bg d-flex cfgb-${value}`}>
+        <Image src={require(`../../Assets/faction/${value}.png`)}
+        className='char-faction__img' />
+        <div className=''>
+          {/* <b className='char-faction__label'>{label}</b> */}
+          <div className='char-faction__txt'>{value}</div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default CharFactionComponent;

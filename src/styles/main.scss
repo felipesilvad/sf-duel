@@ -5,6 +5,16 @@
 .App {
   color: white;
   background-color: $dark;
-  min-height: 100vh;
   font-family: 'Oswald', sans-serif;
+  background-image: url('../Assets/bg2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.ardela {
+  font-family: 'Ardela Edge', sans-serif;
+  font-weight: bolder;
+  font-style: italic;
 }

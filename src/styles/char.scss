@@ -2,9 +2,17 @@ body {
   background-color: $dark;
 }
 
+.char-img__bg {
+  width:-webkit-fill-available;;
+  text-align:center;
+  overflow:hidden;
+  height: 80%;
+}
+
 .char-img {
-  width: -webkit-fill-available;
-  background-color: darken(purple, 20%);
+  max-width:none;
+  margin:0 -100%;
+  width: 13rem;
 }
 
 .char-title {
@@ -14,16 +22,128 @@ body {
   );
 }
 
-.char-faction {
-  background-color: $med;
+.char-faction__bg {
+  width: 100%;
+  background-size: Cover;
+  margin-left: 0.2rem;
+  padding-left: 0.15rem;
+  background-repeat: no-repeat;
+  padding-bottom: 0.25rem;
+}
+.cfgb-Agility {
+background-image: url("../Assets/bg/faction-bg2.png");
+}
+.cfgb-Anasatsuken {
+  background-image: url("../Assets/bg/faction-bg4.png");
+}
+.cfgb-Assassin {
+  background-image: url("../Assets/bg/faction-bg5.png");
+}
+.cfgb-Master {
+  background-image: url("../Assets/bg/faction-bg8.png");
 }
 
 .char-faction__img {
   width: 2rem;
   height: 2rem;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .char-faction__label {
   text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.char-faction__txt {
+  font-size: 1.2rem;
+  margin-top: 0.1rem;
+  margin-left: 0.1rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+}
+
+.char-stat__place {
+  font-weight: 400;
   font-size: 0.8rem;
+  color: $highlight;
+}
+
+.char-stat__bg {
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 0.4rem;
+  margin: 0.2rem;
+  padding-top: 0.1rem;
+}
+
+.skills-div {
+  margin-top: -70px;
+}
+
+.skill-label{
+  font-size: 0.8rem;
+  letter-spacing: .15rem;
+  font-weight: bold;
+  margin: none;
+  text-transform: uppercase;
+  margin-bottom: -0.5rem;
+  margin-left: 0.2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,1);
+}
+.skl-Super {color: #fcf17b;}
+.skl-Passive {color: #96e86a;}
+.skl-Combo {color: #4ce2c5;}
+
+.skill-img-Super {width: 6rem;}
+.skill-img-Combo {
+  width: 4.5rem;
+  margin: 0 0.4rem 0 0.8rem;
+}
+.skill-img-Passive {
+  width: 4.5rem;
+  margin: 0 0.5rem;
+}
+.combo-position-img{
+  width: 2.2rem;
+  position: absolute;
+  z-index: 2;
+}
+
+.skill-target {
+  background-color: $skilltarget;
+  border-radius: 0.25rem;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  width: fit-content;
+  padding: 0 0.75rem;
+}
+
+.skbg-Super {
+  background-image: url("../Assets/bg/skill-bg1.png");
+}
+.skbg-Combo, .skbg-Passive {
+  background-image: url("../Assets/bg/skill-bg2.png");
+}
+
+.skill-txt__bg {
+  background-color: rgba($gray,0.7);
+  border: 0.1rem solid #777165;
+  border-top: none;
+}
+
+.skill-txt {
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+}
+
+.vl {
+  border-left: 0.2rem solid $green;
+  border-radius: 2.5rem;
+  margin: 0.2rem 0.5rem 0.2rem 0.5rem;
+}
+
+.lv-color {
+  color: gray;
+  text-shadow: none;
 }
