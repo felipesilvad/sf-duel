@@ -27,6 +27,9 @@ def setChar(id):
   DEF = ws.acell('C5').value
   SPD = ws.acell('C6').value
 
+  sub_title = ws.acell('G1').value
+  desc = ws.acell('G2').value
+
   super_title = ws.acell('B8').value
   super_target = ws.acell('B9').value
   super_lv1 = ws.acell('B10').value
@@ -132,11 +135,11 @@ def setChar(id):
     u'f_spirit': {
       u'title': f_spirit_title,
       u'skill': f_spirit_skill,
-      u'0': f_spirit0,
-      u'5': f_spirit5,
-      u'10': f_spirit10,
-      u'20': f_spirit20,
-      u'30': f_spirit30,
+      u'txt0': f_spirit0,
+      u'txt5': f_spirit5,
+      u'txt10': f_spirit10,
+      u'txt20': f_spirit20,
+      u'txt30': f_spirit30,
       u'power': f_spirit_power,
       u'desc': f_spirit_desc,
       u'status': f_spirit_status,
@@ -144,4 +147,4 @@ def setChar(id):
   })
   print(title, 'added')
 
-setChar('0001')
+setChar('0008')

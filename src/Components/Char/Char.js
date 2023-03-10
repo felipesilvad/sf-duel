@@ -1,17 +1,21 @@
 import React, {useState, useEffect} from 'react';
 import {Container,Row,Col} from 'react-bootstrap';
 import { doc, onSnapshot } from 'firebase/firestore';
+import {useParams} from 'react-router-dom';
 import db from '../../firebase';
 import CharFactionComponent from './CharFaction';
 import CharStatComponent from './CharStat';
 import CharSkillComponent from './CharSkill';
+import CharBondsComponent from './CharBonds';
+import CharFSComponent from './CharFS';
 
 function CharComponent() {
+  const id = useParams().id
   const [char, setChar] = useState([])
-  const cut_img = `https://firebasestorage.googleapis.com/v0/b/sfduel-74b69.appspot.com/o/chars%2F${'0001'}_cut.png?alt=media`
+  const cut_img = `https://firebasestorage.googleapis.com/v0/b/sfduel-74b69.appspot.com/o/chars%2F${id}_cut.png?alt=media`
 
   useEffect(() => {
-    onSnapshot(doc(db, "/chars/", '0001'), (doc) => {
+    onSnapshot(doc(db, "/chars/", id), (doc) => {
       setChar(doc.data());
     });
   }, []);
@@ -54,12 +58,23 @@ function CharComponent() {
         </Col>
       </Row>
       <div className='skills-div'>
-        <h3 className='char-stat__bg ardela text-center'>Skills</h3>
-        <CharSkillComponent id="0001" skill={char.super} label="Super" img_n="s" />
-        <CharSkillComponent id="0001" skill={char.combo1} label="Combo" img_n="c1" />
-        <CharSkillComponent id="0001" skill={char.passive} label="Passive" img_n="c2" />
-        <CharSkillComponent id="0001" skill={char.combo2} label="Combo" img_n="c2" />
+        <h3 className='char-stat__bg ardela text-center mb-2'>Skills</h3>
+        <CharSkillComponent id={id} skill={char.super} label="Super" img_n="s" />
+        <CharSkillComponent id={id} skill={char.combo1} label="Combo" img_n="c1" />
+        <CharSkillComponent id={id} skill={char.passive} label="Passive" img_n="c2" />
+        <CharSkillComponent id={id} skill={char.combo2} label="Combo" img_n="c2" />
       </div>
+      <h3 className='char-stat__bg ardela text-center mt-3 mb-2'>Bonds</h3>
+      <CharBondsComponent bond={char.bonds_char1} />
+      <CharBondsComponent bond={char.bonds_char2} />
+      <CharBondsComponent bond={char.bonds_char3} />
+      {(!!char.bonds_char4&&(
+        (!!char.bonds_char4[0]&&(
+          <CharBondsComponent bond={char.bonds_char4} />
+        ))
+      ))}
+      <h3 className='char-stat__bg ardela text-center mt-3 mb-2'>Fighting Spirit</h3>
+      <CharFSComponent f_spirit={char.f_spirit} char_title={char.title} id={id} />
     </Container>
   );
 }

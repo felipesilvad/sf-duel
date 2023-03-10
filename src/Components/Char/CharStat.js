@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image} from 'react-bootstrap';
 
-function CharStatComponent({value, label}) {
+function CharStatComponent({value, label, f_spirit}) {
   if (value && label) {
     return (
       <div className={`char-faction__bg d-flex char-stat__bg 
@@ -11,7 +11,9 @@ function CharStatComponent({value, label}) {
         <div className=''>
           <div className='char-faction__txt'>
             <b className='ardela'>{value}</b>
-            <b className='char-stat__place ml-2'>/2nd</b>
+            {(!f_spirit&&(
+              <b className='char-stat__place ml-2'>/2nd</b>
+            ))}
         </div>
         </div>
       </div>
