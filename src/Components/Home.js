@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { query, collection, onSnapshot } from 'firebase/firestore';
 import db from '../firebase';
-import {Container,Row} from 'react-bootstrap';
-import CharListItem from './CharListItem';
-import { useRef } from 'react';
+import DesktopView from './DesktopView';
+import MobileView from './MobileView';
 
 function Home() {
-  const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const [chars, setChars] = useState([])
 
   useEffect (() => {
@@ -16,12 +14,10 @@ function Home() {
   }, [chars])
 
   return (
-    <div className='d-flex flex-wrap justify-content-center'>
-      {}
-      {chars.map((char) => (
-        <CharListItem char={char} />
-      ))}
-    </div>
+    <>
+      <MobileView chars={chars} />
+      <DesktopView chars={chars} />
+    </>
 );
 }
 
