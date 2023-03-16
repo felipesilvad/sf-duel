@@ -1,17 +1,26 @@
 import './styles/main.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Routes, Route} from 'react-router-dom'
-
+import {Container} from 'react-bootstrap';
+import MenuComponent from './Components/Menu';
 import Home from "./Components/Home";
-import CharIDComponent from "./Components/Char/CharID";
+import CharComponent from "./Components/Char/Char";
+import ComboSmilator from './Components/ComboSimulator/ComboSmilator';
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path='/' element={<Home />} exact/>
-        <Route path='/:id' element={<CharIDComponent />} exact/>
-      </Routes>
+      <MenuComponent />
+      <Container className='home-row'>
+        <div className='margin-main'>
+          <Routes>
+            <Route path='/' element={<Home />} exact/>
+            <Route path='/char' element={<Home />} exact/>
+            <Route path='/char/:id' element={<CharComponent />} exact/>
+            <Route path='/combo-simulator' element={<ComboSmilator />} exact/>
+          </Routes>
+        </div>
+      </Container>
     </div>
   );
 }

@@ -15,7 +15,7 @@ function Home() {
 
   return (
     <>
-      <MobileView chars={chars} />
+      {/* <MobileView chars={chars} /> */}
       <DesktopView chars={chars} />
     </>
 );

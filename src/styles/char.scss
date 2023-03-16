@@ -37,19 +37,44 @@ body {
   border-radius: 0.2rem;
 }
 
-.char-faction__bg {
+.side-menu-bg {
+  background: linear-gradient(to left,
+    rgba(black,0),
+    rgba($highlight,0.6),
+  );
+}
+.side-menu-bg:hover, .side-menu-bg-active {
+  background: linear-gradient(to left,
+    rgba(black,0),
+    rgba($highlight,1),
+  );
+}
+
+.char-skill__bg {
   width: 100%;
   background-size: Cover;
   background-repeat: no-repeat;
   padding-bottom: 0.25rem;
 }
-.cfgb-Agility {
+.char-faction__bg {
+  width: 100%;
+  background-size: Cover;
+  background-repeat: no-repeat;
+  padding-bottom: 0.25rem;
+  @media only screen and (min-width: $md) {
+    background-size: contain;
+  }
+}
+.cfgb-Thunder {
+  background-image: url("../Assets/bg/faction-bg1.png");
+}
+.cfgb-Agility,.cfgb-Military,.cfgb-Support {
 background-image: url("../Assets/bg/faction-bg2.png");
 }
 .cfgb-Anasatsuken, .cfgb-Infernal {
   background-image: url("../Assets/bg/faction-bg4.png");
 }
-.cfgb-Assassin, .cfgb-Wind, .cfgb-Ninjutsu {
+.cfgb-Assassin, .cfgb-Wind, .cfgb-Ninjutsu, .cfgb-Tech {
   background-image: url("../Assets/bg/faction-bg5.png");
 }
 .cfgb-Secret{
@@ -57,6 +82,12 @@ background-image: url("../Assets/bg/faction-bg2.png");
 }
 .cfgb-Master {
   background-image: url("../Assets/bg/faction-bg8.png");
+}
+.cfgb-Attack, .cfgb-Power {
+  background-image: url("../Assets/bg/faction-bg9.png");
+}
+.asdasda {
+  background-image: url("../Assets/bg/faction-bg10.png");
 }
 
 .char-faction__img {
@@ -102,6 +133,13 @@ background-image: url("../Assets/bg/faction-bg2.png");
   text-shadow: 6px 6px 10px rgba(0,0,0,0.9);
 }
 
+.char-side-menu__txt {
+  font-size: 1.6rem;
+  margin-top: 0.1rem;
+  margin-left: -3rem;
+  text-shadow: 3px 3px 4px rgba(0,0,0,0.9);
+}
+
 .char-stat__place {
   font-weight: 400;
   font-size: 0.8rem;
@@ -111,12 +149,12 @@ background-image: url("../Assets/bg/faction-bg2.png");
 .char-stat__bg {
   background-color: rgba(0,0,0,0.6);
   border-radius: 0.4rem;
-  margin: 0.2rem;
+  // margin: 0.2rem;
   padding-top: 0.1rem;
 }
 
-.skills-div {
-  margin-top: -70px;
+.after-char-main {
+  margin-top: -70px!important;
 }
 
 .skill-label{
@@ -144,8 +182,11 @@ background-image: url("../Assets/bg/faction-bg2.png");
 }
 .combo-position-img{
   width: 2.2rem;
-  position: absolute;
+  height: 3.5rem;
   z-index: 2;
+  margin-left: -5.8rem;
+  margin-right: 4rem;
+
 }
 
 .skill-target {
@@ -163,6 +204,7 @@ background-image: url("../Assets/bg/faction-bg2.png");
 }
 .skbg-Combo, .skbg-Passive {
   background-image: url("../Assets/bg/skill-bg2.png");
+  padding-left: 0.5rem;
 }
 
 .skill-txt__bg {
@@ -232,4 +274,12 @@ background-image: url("../Assets/bg/faction-bg2.png");
 .charlist-item-img-bg {
   width: 7rem;
   margin: 0 0rem;
+}
+
+.skill-color-blue {color: #295ebe;}
+.skill-color-orange {color: #dc5800;}
+
+.big-name {
+  margin-top: -11rem;
+  margin-left: -3.8rem;
 }
