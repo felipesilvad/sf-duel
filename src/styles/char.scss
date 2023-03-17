@@ -86,7 +86,7 @@ background-image: url("../Assets/bg/faction-bg2.png");
 .cfgb-Attack, .cfgb-Power {
   background-image: url("../Assets/bg/faction-bg9.png");
 }
-.asdasda {
+.cfgb-Balanced, .cfgb-Savage {
   background-image: url("../Assets/bg/faction-bg10.png");
 }
 
@@ -276,10 +276,16 @@ background-image: url("../Assets/bg/faction-bg2.png");
   margin: 0 0rem;
 }
 
-.skill-color-blue {color: #295ebe;}
+.skill-color-blue {color: lighten(#1b70fe, 10)}
 .skill-color-orange {color: #dc5800;}
 
 .big-name {
   margin-top: -11rem;
   margin-left: -3.8rem;
+}
+
+.effect-img{
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: -0.2rem;
 }

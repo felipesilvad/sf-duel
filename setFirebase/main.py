@@ -7,6 +7,21 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 from storage import storage
 
+effects = ["Control",
+"Armor Break",
+"Weaken",
+"Base chance",
+"base chance",
+"Infernal King",
+"Saber",
+"Stun",
+"Dragonrage Curse",
+"DMG Resist UP",
+"Soul",
+"Sharpness",
+"Delusion",
+]
+
 cred = credentials.Certificate("firebaseKey.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
@@ -35,12 +50,14 @@ def setChar(id):
   super_lv1 = ws.acell('B10').value
   super_lv2 = ws.acell('B11').value
   super_lv3 = ws.acell('B12').value
+  super_effects = []
 
   passive_title = ws.acell('D8').value
   passive_lv1 = ws.acell('D9').value
   passive_lv2 = ws.acell('D10').value
   passive_lv3 = ws.acell('D11').value
   passive_lv4 = ws.acell('D12').value
+  passive_effects = []
 
   combo1_title = ws.acell('B14').value
   combo1_position = ws.acell('B15').value
@@ -48,6 +65,7 @@ def setChar(id):
   combo1_lv1 = ws.acell('B17').value
   combo1_lv2 = ws.acell('B18').value
   combo1_lv3 = ws.acell('B19').value
+  combo1_effects = []
 
   combo2_title = ws.acell('D14').value
   combo2_position = ws.acell('D15').value
@@ -55,6 +73,7 @@ def setChar(id):
   combo2_lv1 = ws.acell('D17').value
   combo2_lv2 = ws.acell('D18').value
   combo2_lv3 = ws.acell('D19').value
+  combo2_effects = []
 
   bond_char1 = ws.acell('B22').value
   bond_char1A = ws.acell('B23').value
@@ -84,10 +103,23 @@ def setChar(id):
   f_spirit_desc = ws.acell('G16').value
   values_list = ws.col_values(5)
   f_spirit_status = values_list[slice(8,1000)]
+  f_spirit_effects = []
+
+  for effect in effects:
+    if effect in super_lv1 or effect in super_lv2 or effect in super_lv3:
+      super_effects.append(effect)
+    if effect in passive_lv1 or effect in passive_lv2 or effect in passive_lv3 or effect in passive_lv4:
+      passive_effects.append(effect)
+    if effect in combo1_lv1 or effect in combo1_lv2 or effect in combo1_lv3:
+      combo1_effects.append(effect)
+    if effect in combo2_lv1 or effect in combo2_lv2 or effect in combo2_lv3:
+      combo2_effects.append(effect)
+    if effect in f_spirit0 or effect in f_spirit5 or effect in f_spirit10 or effect in f_spirit20 or effect in f_spirit30:
+      f_spirit_effects.append(effect)
 
   doc_ref = db.collection(u'chars').document(id)
   doc_ref.set({
-    u'title': title,
+    u'title': title, u'sub_title': sub_title, u'desc': desc,
     u'faction': faction,
     u'f_type': f_type,
     u'f_class': f_class,
@@ -104,6 +136,7 @@ def setChar(id):
       u'lv1': super_lv1,
       u'lv2': super_lv2,
       u'lv3': super_lv3,
+      u'effects':super_effects
     },
     u'passive': {
       u'title': passive_title,
@@ -111,6 +144,7 @@ def setChar(id):
       u'lv2': passive_lv2,
       u'lv3': passive_lv3,
       u'lv4': passive_lv4,
+      u'effects':passive_effects
     },
     u'combo1': {
       u'title': combo1_title,
@@ -119,6 +153,7 @@ def setChar(id):
       u'lv1': combo1_lv1,
       u'lv2': combo1_lv2,
       u'lv3': combo1_lv3,
+      u'effects':combo1_effects
     },
     u'combo2': {
       u'title': combo2_title,
@@ -127,6 +162,7 @@ def setChar(id):
       u'lv1': combo2_lv1,
       u'lv2': combo2_lv2,
       u'lv3': combo2_lv3,
+      u'effects':combo2_effects
     },
     u'bonds_char1': [bond_char1, bond_char1A, bond_char1S, bond_char1SS],
     u'bonds_char2':  [bond_char2, bond_char2A, bond_char2S, bond_char2SS],
@@ -143,8 +179,9 @@ def setChar(id):
       u'power': f_spirit_power,
       u'desc': f_spirit_desc,
       u'status': f_spirit_status,
+      u'effects':f_spirit_effects
     }
   })
   print(title, 'added')
 
-setChar('0034')
+setChar('0018')

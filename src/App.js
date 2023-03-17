@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react';
 import './styles/main.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Routes, Route} from 'react-router-dom'
@@ -8,6 +9,9 @@ import CharComponent from "./Components/Char/Char";
 import ComboSmilator from './Components/ComboSimulator/ComboSmilator';
 
 function App() {
+  useEffect(() => {
+    document.title = 'Street Fighter Duel Wiki';
+  }, []);
   return (
     <div className="App">
       <MenuComponent />

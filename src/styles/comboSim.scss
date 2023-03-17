@@ -1,0 +1,18 @@
+.list-char-title {
+  margin-right: 0.25rem;
+  margin-top: -0.25rem;
+}
+
+.list-char-img {
+  width: 6rem;
+}
+
+.list-char-div {
+  transition: 200ms;
+}
+
+.list-char-div:hover {
+  background-color: $highlight;
+  border-radius: 0.25rem;
+  transition: 200ms;
+}

@@ -2,6 +2,7 @@
 @import './base';
 @import './char';
 @import './home';
+@import './comboSim';
 
 .App {
   color: white;
@@ -18,6 +19,7 @@
   font-family: 'Ardela Edge', sans-serif;
   font-weight: bolder;
   font-style: italic;
+  text-transform: uppercase;
 }
 
 .roboto {

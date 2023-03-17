@@ -3,7 +3,7 @@ import {Image} from 'react-bootstrap';
 import CharStatComponent from './CharStat';
 import CharSkillTxtComponent from './CharSkillTxt';
 
-function CharFSComponent({f_spirit, id, char_title}) {
+function CharFSComponent({f_spirit, id, char_title, effects, getEffect}) {
   const img = `https://firebasestorage.googleapis.com/v0/b/sfduel-74b69.appspot.com/o/chars%2F${id}_fs.png?alt=media`
   const imgSkill = `https://firebasestorage.googleapis.com/v0/b/sfduel-74b69.appspot.com/o/chars%2F${id}_fss.png?alt=media`
 
@@ -31,20 +31,25 @@ function CharFSComponent({f_spirit, id, char_title}) {
               <b className='roboto h6'>SKILL: </b>{f_spirit.skill}
             </div>
           </div>
-          <CharSkillTxtComponent txt={f_spirit.txt0} />
+          <CharSkillTxtComponent effects={effects} txt={f_spirit.txt0} />
           <div className='d-flex'>
             <div className='vl'></div>
             <div className=''>
               <b className='skill-label lv-color'>{"[Unlocked at +5]"}</b><br />
-              <CharSkillTxtComponent txt={f_spirit.txt5} />
+              <CharSkillTxtComponent effects={effects} txt={f_spirit.txt5} />
               <b className='skill-label lv-color'>{"[Unlocked at +10]"}</b><br />
-              <CharSkillTxtComponent txt={f_spirit.txt10} />
+              <CharSkillTxtComponent effects={effects} txt={f_spirit.txt10} />
               <b className='skill-label lv-color'>{"[Unlocked at +20]"}</b><br />
-              <CharSkillTxtComponent txt={f_spirit.txt20} />
+              <CharSkillTxtComponent effects={effects} txt={f_spirit.txt20} />
               <b className='skill-label lv-color'>{"[Unlocked at +30]"}</b><br />
-              <CharSkillTxtComponent txt={f_spirit.txt30} />
+              <CharSkillTxtComponent effects={effects} txt={f_spirit.txt30} />
             </div>
           </div>
+          {f_spirit.effects&&(
+            f_spirit.effects.map(effectTitle =>(
+              getEffect(effectTitle)
+            ))
+          )}
           <hr />
           <p className='skill-txt desc-txt mx-1'>{f_spirit.desc}</p>
         </div>

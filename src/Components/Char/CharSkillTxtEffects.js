@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CharSkillTxtEffects({skill, effects,skillEffects,setSkillEffects}) {
+function CharSkillTxtEffects({skill, effects}) {
   const skill_txt = skill.split('|')
 
   const checkEffect = (txt) => {
@@ -9,7 +9,9 @@ function CharSkillTxtEffects({skill, effects,skillEffects,setSkillEffects}) {
       return (
         <skilltxt>
           <b className={`skill-color-${theEffect.color}`}>{theEffect.title}</b>
-          ({theEffect.desc})
+          {(theEffect.img&&(
+            <img className='effect-img' src={require(`../../Assets/effects/${theEffect.title}.png`)} alt={theEffect.title} />
+          ))}
         </skilltxt>
       )
     } else {return txt}
@@ -19,7 +21,7 @@ function CharSkillTxtEffects({skill, effects,skillEffects,setSkillEffects}) {
     return (
       <>
         {skill_txt.map((txt) => (
-          checkEffect(txt)
+         checkEffect(txt)
         ))}
       </>
     );
