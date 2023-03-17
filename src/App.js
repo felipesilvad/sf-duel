@@ -19,7 +19,6 @@ function App() {
         <div className='margin-main'>
           <Routes>
             <Route path='/' element={<Home />} exact/>
-            <Route path='/char' element={<Home />} exact/>
             <Route path='/char/:id' element={<CharComponent />} exact/>
             <Route path='/combo-simulator' element={<ComboSmilator />} exact/>
           </Routes>
