@@ -3,6 +3,7 @@ import {Row,Col} from 'react-bootstrap';
 import { doc, onSnapshot,query, collection} from 'firebase/firestore';
 import {useParams} from 'react-router-dom';
 import db from '../../firebase';
+import {effectOptions} from '../../data/data.ts';
 import CharFactionComponent from './CharFaction';
 import CharStatComponent from './CharStat';
 import CharSkillComponent from './CharSkill';
@@ -17,12 +18,20 @@ function CharComponent() {
   const cut_img = `https://firebasestorage.googleapis.com/v0/b/sfduel-74b69.appspot.com/o/chars%2F${id}_cut.png?alt=media`
 
   const [chars, setChars] = useState([])
-
+  function compare( a, b ) {
+    if ( a.id < b.id ){
+      return -1;
+    }
+    if ( a.id > b.id ){
+      return 1;
+    }
+    return 0;
+  }
   useEffect (() => {
     onSnapshot(query(collection(db, `/chars`)), (snapshot) => {
       setChars(snapshot.docs.map(doc => ({...doc.data(), id: doc.id})))
     });
-  }, [chars])
+  }, [])
 
   useEffect(() => {
     onSnapshot(doc(db, "/chars/", id), (doc) => {
@@ -30,25 +39,9 @@ function CharComponent() {
     });
   }, [id]);
 
-  const effects = [
-    {title:"Control", color: "orange", desc: "Includes Silence, Stun, Charm, and Taunt effects."},
-    {title:"Armor Break", color: "orange", img:true, desc: "Decreases DEF by 3% for 15s. Stacks up to 10 times."},
-    {title:"Weaken", color: "orange", img:true,desc: "Decreases ATK by 5% for 15s. Stacks up to 10 times."},
-    {title:"Base chance", color:"blue", desc:"Affected by Effect Accuracy and Effect Resist."},
-    {title:"base chance", color:"blue", desc:"Affected by Effect Accuracy and Effect Resist."},
-    {title:"Infernal King", color:"blue", desc:"Increases DMG by 30%. Cannot receive any healing from others."},
-    {title:"Saber", color:"blue", desc:"Each stack allows the fighter's attacks to ignore 7% of enemy DEF. Stacks up to 5 times and cannot be dispelled."},
-    {title:"Stun", color:"orange", img:true, desc:"Cannot move, attack, or use active skills."},
-    {title:"Dragonrage Curse", color:"orange", img:false},
-    {title:"DMG Resist UP", color:"blue", img:true},
-    {title:"Soul", color:"orange"},
-    {title:"Sharpness", color:"blue"},
-    {title:"Delusion", color:"orange", img:false, desc:"The target takes True DMG equal to 30% of ATK./n Removes the |Weaken| effect from the enemy target and inflicts |Stun|/n The duration of the |Stun| scales with the number of |Weaken| stacks removed"},
-  ]
-
   const getEffect = (txt) => {
-    if (effects.filter(effect => effect.title === txt)[0]) {
-      const theEffect = effects.filter(effect => effect.title === txt)[0]
+    if (effectOptions.filter(effect => effect.title === txt)[0]) {
+      const theEffect = effectOptions.filter(effect => effect.title === txt)[0]
       if (theEffect.desc) {
         return (
           <p className='roboto'>
@@ -58,7 +51,7 @@ function CharComponent() {
             ))}
             <b className={`skill-color-${theEffect.color}`}>: </b>
             {theEffect.desc&&(
-              <CharSkillTxtComponent effects={effects} txt={theEffect.desc} effectDesc={true} />
+              <CharSkillTxtComponent txt={theEffect.desc} effectDesc={true} />
             )}
           </p>
         )
@@ -69,7 +62,7 @@ function CharComponent() {
   return (
     <Row className='custom-row'>
       <Col md={3} className='d-none d-md-block d-lg-block'>
-        <CharSideMenu id={id} chars={chars} />
+        <CharSideMenu id={id} chars={chars.sort(compare)} />
       </Col>
       <Col md={9} className='desktop-char-row'>
         <Row className='custom-row '>
@@ -114,14 +107,14 @@ function CharComponent() {
         <Row className='after-char-main home-row'>
           <Col lg>
             <h3 className='char-stat__bg ardela text-center mb-2'>Skills</h3>
-            <CharSkillComponent effects={effects} getEffect={getEffect}
+            <CharSkillComponent getEffect={getEffect}
              id={id} skill={char.super} label="Super" img_n="s" />
-            <CharSkillComponent effects={effects} getEffect={getEffect}
+            <CharSkillComponent getEffect={getEffect}
              id={id} skill={char.combo1} label="Combo" img_n="c1" />
-            <CharSkillComponent effects={effects} getEffect={getEffect}
-             id={id} skill={char.passive} label="Passive" img_n="p" />
-            <CharSkillComponent effects={effects} getEffect={getEffect}
+            <CharSkillComponent getEffect={getEffect}
              id={id} skill={char.combo2} label="Combo" img_n="c2" />
+            <CharSkillComponent getEffect={getEffect}
+             id={id} skill={char.passive} label="Passive" img_n="p" />
           </Col>
           <Col lg>
             <h3 className='char-stat__bg ardela text-center mb-2'>Bonds</h3>
@@ -134,7 +127,7 @@ function CharComponent() {
               ))
             ))}
             <h3 className='char-stat__bg ardela text-center mt-3 mb-2'>Fighting Spirit</h3>
-            <CharFSComponent effects={effects} getEffect={getEffect}
+            <CharFSComponent getEffect={getEffect}
             f_spirit={char.f_spirit} char_title={char.title} id={id} />
           </Col>
         </Row>

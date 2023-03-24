@@ -1,7 +1,7 @@
 import React from 'react';
 import CharSkillTxtEffects from './CharSkillTxtEffects';
 
-function CharSkillTxtComponent({txt, effects, effectDesc}) {
+function CharSkillTxtComponent({txt, effectDesc}) {
   const skill_txt = txt.split('/n')
 
   if (txt && skill_txt) {
@@ -10,7 +10,7 @@ function CharSkillTxtComponent({txt, effects, effectDesc}) {
         <>
           {skill_txt.map((skill) => (
             <normaltxt className='skill-txt'>
-              <CharSkillTxtEffects effects={effects} skill={skill} />
+              <CharSkillTxtEffects skill={skill} />
             </normaltxt>
           ))}
         </>
@@ -20,7 +20,7 @@ function CharSkillTxtComponent({txt, effects, effectDesc}) {
         <>
           {skill_txt.map((skill) => (
             <p className='skill-txt'>
-              <CharSkillTxtEffects effects={effects} skill={skill} />
+              <CharSkillTxtEffects skill={skill} />
             </p>
           ))}
         </>

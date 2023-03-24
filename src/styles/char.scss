@@ -45,7 +45,7 @@ body {
 }
 .side-menu-bg:hover, .side-menu-bg-active {
   background: linear-gradient(to left,
-    rgba(black,0),
+    diorgba(black,0),
     rgba($highlight,1),
   );
 }
@@ -65,7 +65,7 @@ body {
     background-size: contain;
   }
 }
-.cfgb-Thunder {
+.cfgb-Thunder, .cfgb-Tank, .cfgb-Wrestling{
   background-image: url("../Assets/bg/faction-bg1.png");
 }
 .cfgb-Agility,.cfgb-Military,.cfgb-Support {
@@ -83,7 +83,7 @@ background-image: url("../Assets/bg/faction-bg2.png");
 .cfgb-Master {
   background-image: url("../Assets/bg/faction-bg8.png");
 }
-.cfgb-Attack, .cfgb-Power {
+.cfgb-Attack, .cfgb-Power, .cfgb-Flame, .cfgb-Budo {
   background-image: url("../Assets/bg/faction-bg9.png");
 }
 .cfgb-Balanced, .cfgb-Savage {
@@ -109,21 +109,6 @@ background-image: url("../Assets/bg/faction-bg2.png");
   margin-top: 0.1rem;
   margin-left: 0.1rem;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
-}
-
-.char-list__txt {
-  transform: rotate(-90deg);
-  color: white;
-  text-shadow: 3px 3px 4px rgba(0,0,0,1);
-  font-size: 2rem;
-  margin-top: -7.2rem;
-  margin-right: -4.7rem;
-  margin-bottom: 5.5rem;
-  background: linear-gradient(to left,
-    rgba(blue, 0),
-    rgba($highlight,0.9),
-  );
-  padding-left: 0.255rem;
 }
 
 .char-bond__txt {
@@ -186,7 +171,6 @@ background-image: url("../Assets/bg/faction-bg2.png");
   z-index: 2;
   margin-left: -5.8rem;
   margin-right: 4rem;
-
 }
 
 .skill-target {
@@ -274,18 +258,47 @@ background-image: url("../Assets/bg/faction-bg2.png");
 .charlist-item-img-bg {
   width: 7rem;
   margin: 0 0rem;
+  @media only screen and (min-width: $md) {
+    margin: 0 1rem;
+  }
 }
 
-.skill-color-blue {color: lighten(#1b70fe, 10)}
+.skill-color-blue {color: #2273ff}
 .skill-color-orange {color: #dc5800;}
+
+.char-list__txt {
+  transform: rotate(-90deg);
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0,0,0,1);
+  font-size: 2rem;
+  margin-top: -7.2rem;
+  margin-right: -4.7rem;
+  margin-bottom: 5.5rem;
+  background: linear-gradient(to left,
+    rgba(blue, 0),
+    rgba($highlight,0.9),
+  );
+  padding-left: 0.255rem;
+  @media only screen and (min-width: $md) {
+    margin-top: -8.1rem;
+    margin-bottom: 6.5rem;
+  }
+}
 
 .big-name {
   margin-top: -11rem;
   margin-left: -3.8rem;
+  margin-bottom: 9rem;
+  @media only screen and (min-width: $md) {
+    margin-left: -2.75rem;
+    margin-bottom: 10rem;
+  }
 }
 
+.big-name-div {
+  margin-right: 2rem!important;
+}
 .effect-img{
   width: 1.2rem;
   height: 1.2rem;
-  margin-top: -0.2rem;
 }

@@ -1,0 +1,44 @@
+.filter-select {
+  background-color: darken(white, 5);
+}
+
+.filter-options {
+  background-color: darken(white, 5);
+  border-radius: 0 0 0.25rem 0.25rem;
+  position: absolute;
+  z-index: 10;
+  // @media only screen and (min-width: $md) {
+  //   width: 68.75%;
+  // }
+}
+
+.filter-options-item {
+  background-color: $med;
+  border-radius: 0.25rem;
+  padding: 0.2rem 0.5rem;
+  margin: 0.2rem;
+  cursor: pointer;
+}
+.filter-options-item:hover {
+  background-color: lighten($med, 5);
+}
+.filter-options-img {
+  margin-top: 0.15rem;
+}
+.filter-options-x {
+  border-radius: 0.2rem;
+  margin-top: -0.12rem;
+}
+.filter-options-x:hover {
+  background-color: gray;
+}
+
+.add-filter-button {
+  background-color: $highlight!important;
+  border-radius: 0!important;
+  border: none!important;
+  padding-right: 0.5rem;
+}
+.add-filter-button:hover {
+  background-color: lighten($highlight, 5)!important;
+}

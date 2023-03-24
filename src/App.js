@@ -12,13 +12,16 @@ function App() {
   useEffect(() => {
     document.title = 'Street Fighter Duel Wiki';
   }, []);
+  
   return (
     <div className="App">
+      <div className='d-none'>Street Fighter Duel Wiki Mobile Game Fighters Information Database Images Game Rip Data Stats Survey Answers Breakdown Tier List</div>
       <MenuComponent />
       <Container className='home-row'>
         <div className='margin-main'>
           <Routes>
             <Route path='/' element={<Home />} exact/>
+            <Route path='/char' element={<Home />} exact/>
             <Route path='/char/:id' element={<CharComponent />} exact/>
             <Route path='/combo-simulator' element={<ComboSmilator />} exact/>
           </Routes>

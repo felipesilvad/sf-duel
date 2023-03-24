@@ -3,6 +3,7 @@
 @import './char';
 @import './home';
 @import './comboSim';
+@import './filter';
 
 .App {
   color: white;
@@ -33,4 +34,8 @@
 
 .margin-main {
   padding-top: 2.5rem;
+}
+
+.color-highlight {
+  color: $highlight!important;
 }

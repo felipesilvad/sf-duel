@@ -1,24 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import { query, collection, onSnapshot } from 'firebase/firestore';
 import db from '../firebase';
-import DesktopView from './DesktopView';
-import MobileView from './MobileView';
+import {Row,Col} from 'react-bootstrap';
+import FilterSelect from './Filters/FilterSelect';
+import CharList from './Char/CharList';
 
 function Home() {
   const [chars, setChars] = useState([])
+  const [loading, setLoading] = useState(true)
+ 
 
   useEffect (() => {
     onSnapshot(query(collection(db, `/chars`)), (snapshot) => {
       setChars(snapshot.docs.map(doc => ({...doc.data(), id: doc.id})))
     });
-  }, [chars])
+    setLoading(false)
+  }, [])
+
+  
+  const [selectedEffects, setElectedEffects] = useState([])
+
+  function filterEffect(char) {
+    if (selectedEffects.length === 0) {
+      return true;
+    } else {
+      return selectedEffects.some((effect) => {
+        return char.combo1.effects.includes(effect) ||
+        char.combo2.effects.includes(effect) ||
+        char.super.effects.includes(effect) ||
+        char.passive.effects.includes(effect) ||
+        char.f_spirit.effects.includes(effect)
+      });
+    }
+  }
 
   return (
-    <>
-      {/* <MobileView chars={chars} /> */}
-      <DesktopView chars={chars} />
-    </>
-);
+    <div>
+      <Row className='mt-2 custom-row'>
+        <Col>
+          <FilterSelect selectedEffects={selectedEffects} setElectedEffects={setElectedEffects}
+          setLoading={setLoading} />
+        </Col>
+      </Row>
+      <div className='mt-2 d-flex flex-wrap justify-content-around desktop-list-row'>
+        <CharList chars={chars.filter(filterEffect)} loading={loading} />
+      </div>
+    </div>
+  );
 }
 
 export default Home;

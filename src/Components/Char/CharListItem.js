@@ -1,5 +1,4 @@
 import React from 'react';
-import {Image} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function CharListItem({char}) {
@@ -8,12 +7,14 @@ function CharListItem({char}) {
   if (char) {
     return (
       <Link to={`/char/${char.id}`}>
-        <div className='char-img-list__bg charlist-item-img-bg'>
+        <div className={`char-img-list__bg charlist-item-img-bg ${(char.big_name&&('big-name-div'))}`}>
           <img src={img} alt="charlist-item-img" className='char-img' />
         </div>
-        <h2 className={`ardela char-list__txt ${(char.big_name&&('big-name'))}`}>
-          {char.title}
-        </h2>
+        <div>
+          <h2 className={`ardela char-list__txt ${(char.big_name&&('big-name'))}`}>
+            {char.title}
+          </h2>
+        </div>
       </Link>
     );
   }
