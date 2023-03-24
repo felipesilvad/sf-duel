@@ -20,20 +20,20 @@ function ComboSimSkill({combo,id,skill,label,img_n,getEffect,selectSkill,selecte
     if (combo === "super") {activateSkill()}
     if (combo === 1) {
       if (selectedSuper) {
-        if (selectedSuper === id) {deactivateSkill()}
         if (selectedSuper !== id) {activateSkill()}
+        if (selectedSuper === id) {deactivateSkill()}
       } else {deactivateSkill()}
     }
     if (combo === 2) {
       if (selectedCombo1) {
-        if (selectedCombo1 === id) {deactivateSkill()}
         if (selectedCombo1 !== id) {activateSkill()}
+        if (selectedCombo1 === id) {deactivateSkill()}
       } else {deactivateSkill()}
     }
     if (combo === 3) {
       if (selectedCombo2) {
-        if (selectedCombo2 === id || selectedCombo1 === id) {deactivateSkill()}
         if (selectedCombo2 !== id && selectedCombo1 !== id) {activateSkill()}
+        if (selectedCombo2 === id || selectedCombo1 === id) {deactivateSkill()}
         console.log(selectedCombo1)
       } else {deactivateSkill()}
     }

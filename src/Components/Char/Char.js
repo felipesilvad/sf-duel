@@ -104,6 +104,18 @@ function CharComponent() {
             </Row>
           </Col>
         </Row>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9944055610365530"
+            crossOrigin="anonymous"></script>
+        {/* <!-- horizontal --> */}
+        <ins class="adsbygoogle"
+            style={{display:"block"}}
+            data-ad-client="ca-pub-9944055610365530"
+            data-ad-slot="3139577697"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
         <Row className='after-char-main home-row'>
           <Col lg>
             <h3 className='char-stat__bg ardela text-center mb-2'>Skills</h3>

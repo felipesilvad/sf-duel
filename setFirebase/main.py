@@ -219,4 +219,4 @@ def setChar(id):
   })
   print(title, 'added')
 
-setChar('0027')
+setChar('0019')

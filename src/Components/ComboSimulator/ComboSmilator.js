@@ -38,20 +38,30 @@ function ComboSmilator() {
       }
     } else {return txt}
   }
+  const checkSelectedChar = (id) => {
+    if (selectedChars.filter(e => e.id === id).length > 0) {return true} else {return false}
+  }
 
   const SelectChar = (char) => {
-    if (selectedChars.length > 3) {
-      setError('You can only select 4 fighters')
+    setError('')
+    if (checkSelectedChar(char.id)) {
+      const i = selectedChars.findIndex((selectedChar) => selectedChar.id === char.id)
+      selectedChars.splice(i, 1);
     } else {
-      setSelectedChars([...selectedChars, char])
+      if (selectedChars.length > 3) {
+        setError('You can only select 4 fighters')
+      } else {
+        setSelectedChars([...selectedChars, char])
+      }
     }
   }
+  
+  // console.log(checkSelectedChar('0020'))
 
   const [selectedSuper, setSelectedSuper] = useState([])
   const [selectedCombo1, setSelectedCombo1] = useState([])
   const [selectedCombo2, setSelectedCombo2] = useState([])
   const [selectedCombo3, setSelectedCombo3] = useState([])
-
 
   if (chars) {
     return (
@@ -62,7 +72,7 @@ function ComboSmilator() {
         )}
         <div className='d-flex flex-wrap justify-content-around desktop-list-row text-center' >
           {chars.map(char => (
-            <div key={char.id} className='list-char-div' onClick={() => SelectChar(char)}>
+            <div key={char.id} className={`list-char-div ${(checkSelectedChar(char.id)&&('list-char-div-active'))}`} onClick={() => SelectChar(char)}>
               <Image className='list-char-img' src={`https://firebasestorage.googleapis.com/v0/b/sfduel-74b69.appspot.com/o/chars%2F${char.id}_s.png?alt=media`} />
               <h6 className='list-char-title'>{char.title}</h6>
             </div>
@@ -122,6 +132,11 @@ function ComboSmilator() {
             )}
           </Col>
         </Row>
+        <div>
+          <p>1. Cannot use Super Combo skill when tagging an undeployed fighter.</p>
+          <p>2. A fighter's Super Combo cannot activate their own Combo.</p>
+          <p>3. The same fighter cannot use 2 Combos during one Combo Chain.</p>
+        </div>
       </div>
     );
   }

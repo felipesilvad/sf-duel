@@ -36,6 +36,7 @@ function Home() {
 
   return (
     <div>
+      <h3 className='ardela text-center'>Street Fighter Duel Character List</h3>
       <Row className='mt-2 custom-row'>
         <Col>
           <FilterSelect selectedEffects={selectedEffects} setElectedEffects={setElectedEffects}
