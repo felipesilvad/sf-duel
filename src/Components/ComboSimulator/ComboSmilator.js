@@ -78,6 +78,14 @@ function ComboSmilator() {
             </div>
           ))}
         </div>
+        <amp-ad width="100vw" height="320"
+            type="adsense"
+            data-ad-client="ca-pub-9944055610365530"
+            data-ad-slot="3139577697"
+            data-auto-format="rspv"
+            data-full-width="">
+          <div overflow=""></div>
+        </amp-ad>
         <Row className='custom-row'>
           <Col sm={3}>
             <h4 className={`skill-label skl-Super text-center h4`}>Super</h4>

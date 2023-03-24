@@ -16,6 +16,7 @@ function CharComponent() {
   const id = useParams().id
   const [char, setChar] = useState([])
   const cut_img = `https://firebasestorage.googleapis.com/v0/b/sfduel-74b69.appspot.com/o/chars%2F${id}_cut.png?alt=media`
+  const sprite = `https://firebasestorage.googleapis.com/v0/b/sfduel-74b69.appspot.com/o/chars%2F${id}_sprite.png?alt=media`
 
   const [chars, setChars] = useState([])
   function compare( a, b ) {
@@ -102,6 +103,15 @@ function CharComponent() {
                 </div>
               </Col>
             </Row>
+            {/* <Row className='home-row'>
+              <Col xs={4}>
+                <img src={sprite} alt={`${char.title} Sprite`} className='sprite-img' />
+              </Col>
+              <Col xs={8}>
+                <h4>{char.subtitle&&(char.sub_title)}</h4>
+                <p>{char.desc&&(char.desc)}</p>
+              </Col>
+            </Row> */}
           </Col>
         </Row>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9944055610365530"
@@ -116,6 +126,30 @@ function CharComponent() {
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+        <div dangerouslySetInnerHTML={{__html: 
+          `
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9944055610365530"
+            crossorigin="anonymous"></script>
+          <!-- horizontal -->
+          <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-9944055610365530"
+              data-ad-slot="3139577697"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+          <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        `
+        }}></div>
+        <amp-ad width="100vw" height="320"
+            type="adsense"
+            data-ad-client="ca-pub-9944055610365530"
+            data-ad-slot="3139577697"
+            data-auto-format="rspv"
+            data-full-width="">
+          <div overflow=""></div>
+        </amp-ad>
         <Row className='after-char-main home-row'>
           <Col lg>
             <h3 className='char-stat__bg ardela text-center mb-2'>Skills</h3>
