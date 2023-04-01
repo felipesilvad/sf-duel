@@ -9,7 +9,6 @@ function Home() {
   const [chars, setChars] = useState([])
   const [loading, setLoading] = useState(true)
  
-
   useEffect (() => {
     onSnapshot(query(collection(db, `/chars`)), (snapshot) => {
       setChars(snapshot.docs.map(doc => ({...doc.data(), id: doc.id})))
@@ -34,6 +33,12 @@ function Home() {
     }
   }
 
+  const sortOrder = {Master: 0, Infernal: 1, Wind: 2, Thunder: 3, Flame: 4};
+
+  function order(a, b) {
+    return sortOrder[a.faction] - sortOrder[b.faction];
+  }
+
   return (
     <div>
       <h3 className='ardela text-center'>Street Fighter Duel Character List</h3>
@@ -44,7 +49,7 @@ function Home() {
         </Col>
       </Row>
       <div className='mt-2 d-flex flex-wrap justify-content-around desktop-list-row'>
-        <CharList chars={chars.filter(filterEffect)} loading={loading} />
+        <CharList chars={chars.sort(order).filter(filterEffect)} loading={loading} />
       </div>
     </div>
   );

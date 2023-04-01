@@ -33,9 +33,22 @@
 }
 
 .margin-main {
-  padding-top: 2.5rem;
+  padding-top: 4.25rem;
 }
 
 .color-highlight {
   color: $highlight!important;
+}
+
+.mb-0{
+  margin-bottom: 0rem!important;
+}
+.char-list-sm-title{
+  margin-top: 0.4rem;
+  margin-right: 0.3rem;
+  font-weight: bolder;
+}
+
+.font-bolder {
+  font-weight: bolder;
 }

@@ -63,6 +63,10 @@ function ComboSmilator() {
   const [selectedCombo2, setSelectedCombo2] = useState([])
   const [selectedCombo3, setSelectedCombo3] = useState([])
 
+  const sortOrder = {Master: 0, Infernal: 1, Wind: 2, Thunder: 3, Flame: 4};
+  function order(a, b) {
+    return sortOrder[a.faction] - sortOrder[b.faction];
+  }
   if (chars) {
     return (
       <div className='desktop-list-row'>
@@ -71,7 +75,7 @@ function ComboSmilator() {
           <div class="alert alert-danger text-center"><strong>{error}</strong></div>
         )}
         <div className='d-flex flex-wrap justify-content-around desktop-list-row text-center' >
-          {chars.map(char => (
+          {chars.sort(order).map(char => (
             <div key={char.id} className={`list-char-div ${(checkSelectedChar(char.id)&&('list-char-div-active'))}`} onClick={() => SelectChar(char)}>
               <Image className='list-char-img' src={`https://firebasestorage.googleapis.com/v0/b/sfduel-74b69.appspot.com/o/chars%2F${char.id}_s.png?alt=media`} />
               <h6 className='list-char-title'>{char.title}</h6>

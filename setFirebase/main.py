@@ -12,6 +12,7 @@ effects = ["Armor Break",
 "Bleed",
 "Burn",
 "Control",
+"Charm",
 "Dazzle",
 "Delusion",
 "Destiny Tarot",
@@ -24,6 +25,8 @@ effects = ["Armor Break",
 "Grave Injury",
 "Guardian Mark",
 "Hatred Mark",
+"Hinder",
+"Love Mark",
 "Joker",
 "Silence",
 "Soul",
@@ -219,4 +222,4 @@ def setChar(id):
   })
   print(title, 'added')
 
-setChar('0019')
+setChar('0031')

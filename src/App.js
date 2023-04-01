@@ -7,6 +7,7 @@ import MenuComponent from './Components/Menu';
 import Home from "./Components/Home";
 import CharComponent from "./Components/Char/Char";
 import ComboSmilator from './Components/ComboSimulator/ComboSmilator';
+import BossesComponent from './Components/Bosses/BossesComponent';
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,7 @@ function App() {
             <Route path='/char' element={<Home />} exact/>
             <Route path='/char/:id' element={<CharComponent />} exact/>
             <Route path='/combo-simulator' element={<ComboSmilator />} exact/>
+            <Route path='/boss' element={<BossesComponent />} exact/>
           </Routes>
         </div>
       </Container>

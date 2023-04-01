@@ -11,10 +11,18 @@
   transition: 200ms;
 }
 
-.list-char-div:hover, .list-char-div-active {
+.list-char-div-active {
   background-color: $highlight;
   border-radius: 0.25rem;
   transition: 200ms;
+}
+
+.list-char-div:hover {
+  @media only screen and (min-width: $md) {
+    background-color: $highlight;
+    border-radius: 0.25rem;
+    transition: 200ms;
+  }
 }
 
 .modal-content {

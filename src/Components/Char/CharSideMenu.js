@@ -3,10 +3,14 @@ import {Image} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function CharSideMenu({id, chars}) {
-  
+  const sortOrder = {Master: 0, Infernal: 1, Wind: 2, Thunder: 3, Flame: 4};
+
+  function order(a, b) {
+    return sortOrder[a.faction] - sortOrder[b.faction];
+  }
   return (
     <div>
-      {chars.map(char => (
+      {chars.sort(order).map(char => (
         <Link to={`/char/${char.id}`} className='link' >
           <div className={`side-menu-bg d-flex h-100 align-items-center my-1
           ${(id===char.id) ? ('side-menu-bg-active') : ('')}`}>

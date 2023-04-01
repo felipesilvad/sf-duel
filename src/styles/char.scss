@@ -31,7 +31,7 @@ body {
 
 .sprite-img {
   max-width:none;
-  width: 13rem;
+  width: -webkit-fill-available;
 }
 
 .char-title {
@@ -50,7 +50,7 @@ body {
 }
 .side-menu-bg:hover, .side-menu-bg-active {
   background: linear-gradient(to left,
-    diorgba(black,0),
+    rgba(black,0),
     rgba($highlight,1),
   );
 }
@@ -76,7 +76,7 @@ body {
 .cfgb-Agility,.cfgb-Military,.cfgb-Support {
 background-image: url("../Assets/bg/faction-bg2.png");
 }
-.cfgb-Anasatsuken, .cfgb-Infernal {
+.cfgb-Anasatsuken, .cfgb-Infernal, .cfgb-Raging {
   background-image: url("../Assets/bg/faction-bg4.png");
 }
 .cfgb-Assassin, .cfgb-Wind, .cfgb-Ninjutsu, .cfgb-Tech {
@@ -85,7 +85,7 @@ background-image: url("../Assets/bg/faction-bg2.png");
 .cfgb-Secret{
   background-image: url("../Assets/bg/faction-bg7.png");
 }
-.cfgb-Master {
+.cfgb-Master, .cfgb-Legendary {
   background-image: url("../Assets/bg/faction-bg8.png");
 }
 .cfgb-Attack, .cfgb-Power, .cfgb-Flame, .cfgb-Budo {
@@ -126,7 +126,7 @@ background-image: url("../Assets/bg/faction-bg2.png");
 .char-side-menu__txt {
   font-size: 1.6rem;
   margin-top: 0.1rem;
-  margin-left: -3rem;
+  margin-left: -3.2rem;
   text-shadow: 3px 3px 4px rgba(0,0,0,0.9);
 }
 
@@ -306,4 +306,9 @@ background-image: url("../Assets/bg/faction-bg2.png");
 .effect-img{
   width: 1.2rem;
   height: 1.2rem;
+}
+
+.char-subtitle-bg {
+  background-color: rgba($color: black, $alpha: 0.7);
+  border-radius: 2rem;
 }

@@ -77,7 +77,7 @@ function CharComponent() {
               <h1 className='ardela'>{char.title}</h1>
             </div>
             <Row className='home-row'>
-              <Col>
+              <Col lg>
                 <div>
                   <div className='d-flex justify-content-around'>
                     <CharFactionComponent label="Faction" value={char.faction} />
@@ -88,8 +88,6 @@ function CharComponent() {
                     <CharFactionComponent label="Fighting Style" value={char.f_style} />
                   </div>
                 </div>
-              </Col>
-              <Col>
                 <div>
                   <CharStatComponent label="Power" value={char.power} chars={chars} id={id} />
                   <div className='d-flex justify-content-around'>
@@ -102,16 +100,18 @@ function CharComponent() {
                   </div>
                 </div>
               </Col>
+              <Col lg>
+                <Row className='home-row d-none d-lg-flex'>
+                  <Col xs={4}>
+                    <img src={sprite} alt={`${char.title} Sprite`} className='sprite-img' />
+                  </Col>
+                  <Col xs={8} className="char-subtitle-bg">
+                    <h4 className='ardela mt-2'>{char.sub_title&&(char.sub_title)}</h4>
+                    <p>{char.desc&&(char.desc)}</p>
+                  </Col>
+                </Row>
+              </Col>
             </Row>
-            {/* <Row className='home-row'>
-              <Col xs={4}>
-                <img src={sprite} alt={`${char.title} Sprite`} className='sprite-img' />
-              </Col>
-              <Col xs={8}>
-                <h4>{char.subtitle&&(char.sub_title)}</h4>
-                <p>{char.desc&&(char.desc)}</p>
-              </Col>
-            </Row> */}
           </Col>
         </Row>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9944055610365530"
@@ -122,6 +122,7 @@ function CharComponent() {
             data-ad-client="ca-pub-9944055610365530"
             data-ad-slot="3139577697"
             data-ad-format="auto"
+            data-adtest="on"
             data-full-width-responsive="true"></ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
@@ -163,7 +164,10 @@ function CharComponent() {
              id={id} skill={char.passive} label="Passive" img_n="p" />
           </Col>
           <Col lg>
-            <h3 className='char-stat__bg ardela text-center mb-2'>Bonds</h3>
+            <h3 className='char-stat__bg ardela text-center mb-2'>Fighting Spirit</h3>
+            <CharFSComponent getEffect={getEffect}
+            f_spirit={char.f_spirit} char_title={char.title} id={id} />
+            <h3 className='char-stat__bg ardela text-center mb-2 mt-3'>Bonds</h3>
             <CharBondsComponent bond={char.bonds_char1} />
             <CharBondsComponent bond={char.bonds_char2} />
             <CharBondsComponent bond={char.bonds_char3} />
@@ -172,9 +176,15 @@ function CharComponent() {
                 <CharBondsComponent bond={char.bonds_char4} />
               ))
             ))}
-            <h3 className='char-stat__bg ardela text-center mt-3 mb-2'>Fighting Spirit</h3>
-            <CharFSComponent getEffect={getEffect}
-            f_spirit={char.f_spirit} char_title={char.title} id={id} />
+            <Row className='home-row d-lg-none d-xl-none'>
+              <Col xs={4}>
+                <img src={sprite} alt={`${char.title} Sprite`} className='sprite-img' />
+              </Col>
+              <Col xs={8} className="char-subtitle-bg">
+                <h4 className='ardela mt-2'>{char.sub_title&&(char.sub_title)}</h4>
+                <p>{char.desc&&(char.desc)}</p>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Col>
