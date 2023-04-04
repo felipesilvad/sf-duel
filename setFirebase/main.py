@@ -64,6 +64,26 @@ cred = credentials.Certificate("firebaseKey.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 gc = gspread.service_account(filename='sheetsKey.json')
+
+def setFS(id):
+  sh = gc.open('SFDchars')
+  ws = sh.worksheet(id)
+  title = ws.acell('A1').value
+  stats_list = ws.col_values(2)
+  stats = stats_list[slice(1,1000)]
+  unlock = ws.acell('C2').value
+  skill_list = ws.col_values(1)
+  skills = skill_list[slice(1,1000)]
+
+  doc_ref = db.collection(u'fs').document(id)
+  doc_ref.set({
+    u'title': title,
+    u'stats': stats,
+    u'unlock': unlock,
+    u'skills': skills,
+  })
+  print(title, 'added')
+
 def setChar(id):
   sh = gc.open('SFDchars')
   ws = sh.worksheet(id)
@@ -222,4 +242,5 @@ def setChar(id):
   })
   print(title, 'added')
 
-setChar('0031')
+# setChar('0034')
+setFS('FS010')

@@ -33,7 +33,7 @@ function Home() {
     }
   }
 
-  const sortOrder = {Master: 0, Infernal: 1, Wind: 2, Thunder: 3, Flame: 4};
+  const sortOrder = {Master: 0, Infernal: 1, Wind: 2, Thunder: 3, Flame: 4, Legendary: 5};
 
   function order(a, b) {
     return sortOrder[a.faction] - sortOrder[b.faction];

@@ -10,7 +10,7 @@ function BossesItem({boss}) {
 
   if (boss) {
     return (
-      <div>
+      <div key={boss.id}>
         <div className={`char-stat__bg d-flex h-100 align-items-center`} >
           <Image className='bond-img' src={img} />
           <div className='char-bond__txt ardela'>{boss.title}</div>
@@ -32,7 +32,7 @@ function BossesItem({boss}) {
           <Col md={6}>
             <div className='f-spirit-bg m-1 px-2'>
               <div className={`char-skill__bg d-flex pt-2 align-items-center`}>
-                <Image src={skill1_img} className={`skill-img-Passive`} />
+                <Image src={skill2_img} className={`skill-img-Passive`} />
                 <div className='d-flex h-100 align-items-center'>
                   <div className='char-faction__txt ardela'>{boss.skill2.title}</div>
                 </div>
@@ -45,7 +45,7 @@ function BossesItem({boss}) {
           <Col md={6}>
             <div className='f-spirit-bg m-1 px-2'>
               <div className={`char-skill__bg d-flex pt-2 align-items-center`}>
-                <Image src={skill1_img} className={`skill-img-Passive`} />
+                <Image src={skill3_img} className={`skill-img-Passive`} />
                 <div className='d-flex h-100 align-items-center'>
                   <div className='char-faction__txt ardela'>{boss.skill3.title}</div>
                 </div>
@@ -58,7 +58,7 @@ function BossesItem({boss}) {
           <Col md={6}>
             <div className='f-spirit-bg m-1 px-2'>
               <div className={`char-skill__bg d-flex pt-2 align-items-center`}>
-                <Image src={skill1_img} className={`skill-img-Passive`} />
+                <Image src={skill4_img} className={`skill-img-Passive`} />
                 <div className='d-flex h-100 align-items-center'>
                   <div className='char-faction__txt ardela'>{boss.skill4.title}</div>
                 </div>

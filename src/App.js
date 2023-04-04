@@ -8,6 +8,7 @@ import Home from "./Components/Home";
 import CharComponent from "./Components/Char/Char";
 import ComboSmilator from './Components/ComboSimulator/ComboSmilator';
 import BossesComponent from './Components/Bosses/BossesComponent';
+import FSList from './Components/FS/FSList';
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
             <Route path='/char/:id' element={<CharComponent />} exact/>
             <Route path='/combo-simulator' element={<ComboSmilator />} exact/>
             <Route path='/boss' element={<BossesComponent />} exact/>
+            <Route path='/fighting-souls' element={<FSList />} exact/>
           </Routes>
         </div>
       </Container>
