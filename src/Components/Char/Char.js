@@ -89,13 +89,17 @@ function CharComponent() {
                   </div>
                 </div>
                 <div>
-                  <CharStatComponent label="Power" value={char.power} chars={chars} id={id} />
-                  <div className='d-flex justify-content-around'>
+                  {/* <CharStatComponent label="Power" value={char.power} chars={chars} id={id} /> */}
+                  <div className='d-flex justify-content-center'>
                     <CharStatComponent label="HP" value={char.HP} chars={chars} id={id} />
+                  </div>
+                  <div className='d-flex justify-content-center'>
                     <CharStatComponent label="ATK" value={char.ATK} chars={chars} id={id} />
                   </div>
-                  <div className='d-flex justify-content-around'>
+                  <div className='d-flex justify-content-center'>
                     <CharStatComponent label="DEF" value={char.DEF} chars={chars} id={id} />
+                  </div>
+                  <div className='d-flex justify-content-center'>
                     <CharStatComponent label="SPD" value={char.SPD} chars={chars} id={id} />
                   </div>
                 </div>
