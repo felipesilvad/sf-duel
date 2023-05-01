@@ -5,28 +5,28 @@ function CharStatComponent({value, label, f_spirit, chars, id}) {
 
   function compare( a, b ) {
     if (label === "Power") {
-      if (b.power > a.power){return 1;}
-      if (b.power < a.power){return -1;}
+      if (parseInt(b.power) > parseInt(a.power)){return 1;}
+      if (parseInt(b.power) < parseInt(a.power)){return -1;}
       return 0;
     }
     if (label === "ATK") {
-      if (b.ATK > a.ATK){return 1;}
-      if (b.ATK < a.ATK){return -1;}
+      if (parseInt(b.ATK) > parseInt(a.ATK)){return 1;}
+      if (parseInt(b.ATK) < parseInt(a.ATK)){return -1;}
       return 0;
     }
     if (label === "DEF") {
-      if (b.DEF > a.DEF){return 1;}
-      if (b.DEF < a.DEF){return -1;}
+      if (parseInt(b.DEF) > parseInt(a.DEF)){return 1;}
+      if (parseInt(b.DEF) < parseInt(a.DEF)){return -1;}
       return 0;
     }
     if (label === "SPD") {
-      if (b.SPD > a.SPD){return 1;}
-      if (b.SPD < a.SPD){return -1;}
+      if (parseInt(b.SPD) > parseInt(a.SPD)){return 1;}
+      if (parseInt(b.SPD) < parseInt(a.SPD)){return -1;}
       return 0;
     }
     if (label === "HP") {
-      if (b.HP > a.HP){return 1;}
-      if (b.HP < a.HP){return -1;}
+      if (parseInt(b.HP) > parseInt(a.HP)){return 1;}
+      if (parseInt(b.HP) < parseInt(a.HP)){return -1;}
       return 0;
     }
   }
