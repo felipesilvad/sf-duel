@@ -1,0 +1,33 @@
+[debug] [2023-06-02T20:40:13.824Z] ----------------------------------------------------------------------
+[debug] [2023-06-02T20:40:13.827Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\felip\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2023-06-02T20:40:13.828Z] CLI Version:   12.3.0
+[debug] [2023-06-02T20:40:13.828Z] Platform:      win32
+[debug] [2023-06-02T20:40:13.829Z] Node Version:  v18.16.0
+[debug] [2023-06-02T20:40:13.829Z] Time:          Fri Jun 02 2023 17:40:13 GMT-0300 (Brasilia Standard Time)
+[debug] [2023-06-02T20:40:13.829Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-02T20:40:13.968Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-02T20:40:13.969Z] > authorizing via signed-in user (clouddropfgc@gmail.com)
+[debug] [2023-06-02T20:40:13.969Z] [iam] checking project sfduel-74b69 for permissions ["firebase.projects.get"]
+[debug] [2023-06-02T20:40:13.972Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/sfduel-74b69:testIamPermissions [none]
+[debug] [2023-06-02T20:40:13.972Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/sfduel-74b69:testIamPermissions x-goog-quota-user=projects/sfduel-74b69
+[debug] [2023-06-02T20:40:13.972Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sfduel-74b69:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-06-02T20:40:14.869Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/sfduel-74b69:testIamPermissions 200
+[debug] [2023-06-02T20:40:14.870Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sfduel-74b69:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-06-02T20:40:14.872Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sfduel-74b69 [none]
+[debug] [2023-06-02T20:40:15.316Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sfduel-74b69 200
+[debug] [2023-06-02T20:40:15.316Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sfduel-74b69 {"projectId":"sfduel-74b69","projectNumber":"466050752318","displayName":"sfduel","name":"projects/sfduel-74b69","resources":{"hostingSite":"sfduel-74b69","storageBucket":"sfduel-74b69.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_4bbec822-21e7-4132-b1b0-ba3cb84699e8"}
+[info] 
+[info] === Serving from 'D:\Documents\GitHub\sf-duel'...
+[info] 
+[debug] [2023-06-02T20:40:15.323Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/sfduel-74b69/sites 
+[debug] [2023-06-02T20:40:16.438Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/sfduel-74b69/sites 200
+[debug] [2023-06-02T20:40:16.438Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/sfduel-74b69/sites {"sites":[{"name":"projects/sfduel-74b69/sites/sfduel-74b69","defaultUrl":"https://sfduel-74b69.web.app","appId":"1:466050752318:web:996f1d42767646c21e166f","type":"DEFAULT_SITE"}]}
+[debug] [2023-06-02T20:40:16.439Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sfduel-74b69/webApps/1:466050752318:web:996f1d42767646c21e166f/config [none]
+[debug] [2023-06-02T20:40:17.600Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sfduel-74b69/webApps/1:466050752318:web:996f1d42767646c21e166f/config 200
+[debug] [2023-06-02T20:40:17.600Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sfduel-74b69/webApps/1:466050752318:web:996f1d42767646c21e166f/config {"projectId":"sfduel-74b69","appId":"1:466050752318:web:996f1d42767646c21e166f","storageBucket":"sfduel-74b69.appspot.com","locationId":"us-central","apiKey":"AIzaSyC9apTMWmRS6-8MIDWSILJOeGJygS6RR0M","authDomain":"sfduel-74b69.firebaseapp.com","messagingSenderId":"466050752318","measurementId":"G-8QNR5S8Y7C"}
+[debug] [2023-06-02T20:40:17.605Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sfduel-74b69 [none]
+[debug] [2023-06-02T20:40:18.020Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sfduel-74b69 200
+[debug] [2023-06-02T20:40:18.020Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sfduel-74b69 {"projectId":"sfduel-74b69","projectNumber":"466050752318","displayName":"sfduel","name":"projects/sfduel-74b69","resources":{"hostingSite":"sfduel-74b69","storageBucket":"sfduel-74b69.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_4bbec822-21e7-4132-b1b0-ba3cb84699e8"}
+[info] i  hosting[sfduel-74b69]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting[sfduel-74b69]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}

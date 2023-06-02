@@ -5,6 +5,7 @@ import {Image,Row,Col} from 'react-bootstrap';
 import CharSkillTxtComponent from '../Char/CharSkillTxt';
 import {effectOptions} from '../../data/data.ts';
 import ComboSimSkill from './ComboSimSkill';
+import AdComponent from '../Ads/AdComponent';
 
 
 function ComboSmilator() {
@@ -66,6 +67,7 @@ function ComboSmilator() {
     return (
       <div className='desktop-list-row'>
         <h3 className='ardela text-center'>Street Fighter Duel Combo Simulator</h3>
+        <AdComponent />
         {error&&(
           <div class="alert alert-danger text-center"><strong>{error}</strong></div>
         )}

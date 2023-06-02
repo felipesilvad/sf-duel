@@ -12,7 +12,7 @@ function CharListItem({char}) {
         </div>
         <div>
           <h2 className={`ardela char-list__txt`}>
-            {(char.id === '0013'||char.id === '0021'||char.id === '0031'||char.id === '0035'||char.id === '0036'||char.id === '0039') ? (
+            {(char.id === '0013'||char.id === '0021'||char.id === '0031'||char.id === '0035'||char.id === '0036'||char.id === '0039'||char.id === '0041') ? (
               <div className='d-flex h-100 align-text-bottom mb-0'><h4 className='char-list-sm-title mb-0'>{char.title.split(' ')[0]}</h4><h2 className='font-bolder mb-0'>{char.title.split(' ')[1]}</h2></div>
             ) : (
               (char.id === '0022'||char.id === '0032'||char.id === '0033') ? (

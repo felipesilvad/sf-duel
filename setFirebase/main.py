@@ -58,6 +58,7 @@ effects = ["Armor Break",
 "Qi Focus",
 "Saber",
 "Sakura Rain",
+"Satsui no Iki",
 "Sharpness",
 "Shock",
 "Super Armor",
@@ -247,5 +248,5 @@ def setChar(id):
   })
   print(title, 'added')
 
-setChar('0039')
+setChar('0043')
 # setFS('FS010')

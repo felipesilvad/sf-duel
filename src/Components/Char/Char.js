@@ -11,6 +11,8 @@ import CharBondsComponent from './CharBonds';
 import CharFSComponent from './CharFS';
 import CharSideMenu from './CharSideMenu';
 import CharSkillTxtComponent from './CharSkillTxt';
+import AdComponent from '../Ads/AdComponent';
+
 
 function CharComponent() {
   const id = useParams().id
@@ -118,43 +120,9 @@ function CharComponent() {
             </Row>
           </Col>
         </Row>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9944055610365530"
-            crossOrigin="anonymous"></script>
-        {/* <!-- horizontal --> */}
-        <ins class="adsbygoogle"
-            style={{display:"block"}}
-            data-ad-client="ca-pub-9944055610365530"
-            data-ad-slot="3139577697"
-            data-ad-format="auto"
-            data-adtest="on"
-            data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        <div dangerouslySetInnerHTML={{__html: 
-          `
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9944055610365530"
-            crossorigin="anonymous"></script>
-          <!-- horizontal -->
-          <ins class="adsbygoogle"
-              style="display:block"
-              data-ad-client="ca-pub-9944055610365530"
-              data-ad-slot="3139577697"
-              data-ad-format="auto"
-              data-full-width-responsive="true"></ins>
-          <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        `
-        }}></div>
-        <amp-ad width="100vw" height="320"
-            type="adsense"
-            data-ad-client="ca-pub-9944055610365530"
-            data-ad-slot="3139577697"
-            data-auto-format="rspv"
-            data-full-width="">
-          <div overflow=""></div>
-        </amp-ad>
+        
+        <AdComponent />
+
         <Row className='after-char-main home-row'>
           <Col lg>
             <h3 className='char-stat__bg ardela text-center mb-2'>Skills</h3>
