@@ -33,6 +33,16 @@ function Home() {
     }
   }
 
+  const [seatchTxt, setSeatchTxt] = useState('')
+
+  function filterSearch(char) {
+    if (seatchTxt === '') {
+      return true;
+    } else {
+      return char.title.toLowerCase().includes(seatchTxt.toLowerCase())
+    }
+  }
+
   const sortOrder = {Master: 0, Infernal: 1, Wind: 2, Thunder: 3, Flame: 4, Legendary: 5};
 
   function order(a, b) {
@@ -45,11 +55,11 @@ function Home() {
       <Row className='mt-2 custom-row'>
         <Col>
           <FilterSelect selectedEffects={selectedEffects} setElectedEffects={setElectedEffects}
-          setLoading={setLoading} />
+          setLoading={setLoading} setSeatchTxt={setSeatchTxt} />
         </Col>
       </Row>
       <div className='mt-2 d-flex flex-wrap justify-content-around desktop-list-row'>
-        <CharList chars={chars.sort(order).filter(filterEffect)} loading={loading} />
+        <CharList chars={chars.sort(order).filter(filterEffect).filter(filterSearch)} loading={loading} />
       </div>
     </div>
   );

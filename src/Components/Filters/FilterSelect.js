@@ -1,11 +1,11 @@
 import React,  {useState} from 'react';
 import {effectOptions} from '../../data/data.ts';
 import FilterOptions from './FilterOptions';
-import {Button} from 'react-bootstrap';
+import {Button,Form} from 'react-bootstrap';
 import {BsCaretDownFill} from 'react-icons/bs';
 import {BsCaretUpFill} from 'react-icons/bs';
 
-function FilterSelect({selectedEffects,setElectedEffects,setLoading}) {
+function FilterSelect({selectedEffects,setElectedEffects,setLoading,setSeatchTxt}) {
   const [showOptions, setShowOptions] = useState(false)
   const turnOptions = () => setShowOptions(!showOptions)
 
@@ -43,6 +43,9 @@ function FilterSelect({selectedEffects,setElectedEffects,setLoading}) {
 
   return (
     <div>
+      <div className='d-flex mb-1'>
+        <Form.Control type="search" placeholder="Search" onChange={(e) => setSeatchTxt(e.target.value)} />
+      </div>
       <div className='filter-select d-flex flex-wrap'>
         <Button className="add-filter-button ardela" onClick={turnOptions}>
           Add Effect Filter

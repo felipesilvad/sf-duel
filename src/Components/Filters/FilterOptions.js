@@ -9,7 +9,9 @@ function FilterOptions({effectTitle,addEffectToFilter,showX,removeEffectToFilter
       return (
         <div key={theEffect.title} className={`filter-options-item d-flex skill-color-${theEffect.color}}`}>
           {(theEffect.img&&(
-            <img className='effect-img mr-1 filter-options-img' src={require(`../../Assets/effects/${theEffect.title}.png`)} alt={theEffect.title} />
+            require(`../../Assets/effects/${theEffect.title}.png`)&&(
+              <img className='effect-img mr-1 filter-options-img' src={require(`../../Assets/effects/${theEffect.title}.png`)} alt={theEffect.title} />
+            )
           ))}
           <b className={`skill-color-${theEffect.color}`}>{theEffect.title}</b>
           <div onClick={() => removeEffectToFilter(theEffect.title)} className='filter-options-x px-1 mx-1'><MdClose /></div>

@@ -43,13 +43,17 @@ effects = ["Armor Break",
 "Conquer",
 "Dazzling Blossom",
 "Dazzling Sakura",
+"Demon Energy",
+"Demon Power",
 "Desperation",
 "DMG Resist UP",
 "DMG Sharing",
 "Dodge UP",
 "Electrified",
 "Extreme",
+"Extreme Impact",
 "Feng Shui Engine",
+"Imperator",
 "Infernal King",
 "Life Tarot",
 "Penance",
@@ -248,5 +252,5 @@ def setChar(id):
   })
   print(title, 'added')
 
-setChar('0043')
+setChar('0046')
 # setFS('FS010')

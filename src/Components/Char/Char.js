@@ -121,9 +121,11 @@ function CharComponent() {
           </Col>
         </Row>
         
-        <AdComponent />
+        <div className='after-char-main p-1'>
+          <AdComponent />
+        </div>
 
-        <Row className='after-char-main home-row'>
+        <Row className='home-row'>
           <Col lg>
             <h3 className='char-stat__bg ardela text-center mb-2'>Skills</h3>
             <CharSkillComponent getEffect={getEffect}

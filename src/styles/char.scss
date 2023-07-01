@@ -282,17 +282,17 @@ background-image: url("../Assets/bg/faction-bg2.png");
   color: white;
   text-shadow: 3px 3px 4px rgba(0,0,0,1);
   font-size: 2rem;
-  margin-top: -7.2rem;
+  margin-top: -8.6rem;
   margin-right: -4.7rem;
-  margin-bottom: 5.5rem;
+  margin-bottom: 0.5rem;
   background: linear-gradient(to left,
     rgba(blue, 0),
     rgba($highlight,0.9),
   );
   padding-left: 0.255rem;
   @media only screen and (min-width: $md) {
-    margin-top: -8.1rem;
-    margin-bottom: 6.5rem;
+    margin-top: -9.6rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -317,4 +317,14 @@ background-image: url("../Assets/bg/faction-bg2.png");
 .char-subtitle-bg {
   background-color: rgba($color: black, $alpha: 0.7);
   border-radius: 2rem;
+}
+
+.char-list-faction {
+  width: 2rem;
+  height: 2rem;
+  margin-top: -4.5rem;
+  margin-left: 0.1rem;
+  @media only screen and (min-width: $md) {
+    margin-left: 1.1rem;
+  }
 }
