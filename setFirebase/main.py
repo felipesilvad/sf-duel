@@ -57,6 +57,7 @@ effects = ["Armor Break",
 "Infernal King",
 "Life Tarot",
 "Penance",
+"Poison",
 "Potato",
 "Qi Flow",
 "Qi Focus",
@@ -252,5 +253,5 @@ def setChar(id):
   })
   print(title, 'added')
 
-setChar('0046')
+setChar('0048')
 # setFS('FS010')

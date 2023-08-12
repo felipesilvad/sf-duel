@@ -56,6 +56,7 @@ export const effectOptions: readonly EffectOption[] = [
   {color:"blue", title:"Infernal King", img:false, desc:"Increases DMG by 30%. Cannot receive any healing from others."},
   {color:"blue", title:"Life Tarot", img:false, desc:"Reduces DMG taken by 15%. Target explodes if it takes a ranged attack, using up 1 stack and restoring HP equal to 60% ATK to allies in the area. Stacks up to 3 times."},
   {color:"blue", title:"Penance", img:true, desc:"Each stack increases |Flame| DMG and Dodge by 25% for 8s. Stacks up to 10 times."},
+  {color:"blue", title:"Poison", img:false, desc:"Reduce SPD by 8. When using a skill, lose 1% of max HP, capped at 80% of the poisoner's ATK. Stacks up to 10 times. Lasts 15s."},
   {color:"blue", title:"Potato", img:true, desc:"Each stack increases the amount of healing received by 4%. Cannot be dispelled and stacks up to 5 times."},
   {color:"blue", title:"Qi Flow", img:false, desc:"Increase DEF by 100+6% for 30s. Stacks up to 5 times."},
   {color:"blue", title:"Qi Focus", img:false, desc:"Increases DMG by 4% for 30s."},
