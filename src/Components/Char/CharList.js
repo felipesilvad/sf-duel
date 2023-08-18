@@ -4,10 +4,12 @@ import CharListItem from './CharListItem';
 
 function CharList({chars, loading}) {
 
+  const new_chars = chars.length
+
   if (!loading) {
     return (
       chars.map((char) => (
-        <CharListItem char={char} />
+        <CharListItem char={char} new_chars={new_chars} />
       ))
     )
   } else {

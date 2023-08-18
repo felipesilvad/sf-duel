@@ -65,7 +65,9 @@ export const effectOptions: readonly EffectOption[] = [
   {color:"blue", title:"Satsui no Iki", img:false, desc:"(Effects described here apply only to Evil Ryu's |Satsui no Iki|)/nFighter takes 10% less |Soul| DMG and 5% less DMG for all other types of DMG. Their Pressure is also increased by 10%. |Satsui no Iki| lasts 30s and can stack up to 10 times."},
   {color:"blue", title:"Sharpness", img:false},
   {color:"blue", title:"Shock", img:true,desc: "Target takes |Thunder| DMG equal to 10% of ATK for each attack received for 6s. Stacks up to 10 times."},
+  {color:"blue", title:"Steel Thunder", img:false,desc: "Reduces DMG received by 3%. Increases Crit Resist by 3%. When attacked, reduce DMG taken by 3% of base ATK. Lasts until the battle ends. Stacks up to 10 times."},
   {color:"blue", title:"Super Armor", img:true,desc: "Cannot be knocked back."},
+  {color:"blue", title:"Void Power", img:false,desc: "Increases DMG dealt by 5%. Increases Crit DMG by 5%. When attacking, increase DMG dealt by 5% of base ATK. Lasts until the battle ends. Stacks up to 10 times"},
   {color:"blue", title:"White Eye", img:false,desc: "Gains a 5% DEF Bonus and a 3% ATK Bonus for 10s. Stacks up to 5 times."},
   {color:"blue", title:"Wildfire", img:false,desc: "When dealing DMG, 35% chance to remove 1x Wildefire and deals additional Flame DMG equal to 310% of ATK. Stacks up to 12 times."},
 ]

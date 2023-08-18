@@ -66,7 +66,9 @@ effects = ["Armor Break",
 "Satsui no Iki",
 "Sharpness",
 "Shock",
+"Steel Thunder",
 "Super Armor",
+"Void Power",
 "White Eye",
 "Wildfire",
 ]
@@ -126,6 +128,7 @@ def setChar(id):
   passive_lv2 = ws.acell('D10').value
   passive_lv3 = ws.acell('D11').value
   passive_lv4 = ws.acell('D12').value
+  passive_lv5 = ws.acell('D13').value
   passive_effects = []
 
   combo1_title = ws.acell('B14').value
@@ -134,6 +137,7 @@ def setChar(id):
   combo1_lv1 = ws.acell('B17').value
   combo1_lv2 = ws.acell('B18').value
   combo1_lv3 = ws.acell('B19').value
+  combo1_lv4 = ws.acell('B20').value
   combo1_effects = []
 
   combo2_title = ws.acell('D14').value
@@ -142,6 +146,7 @@ def setChar(id):
   combo2_lv1 = ws.acell('D17').value
   combo2_lv2 = ws.acell('D18').value
   combo2_lv3 = ws.acell('D19').value
+  combo2_lv4 = ws.acell('D20').value
   combo2_effects = []
 
   bond_char1 = ws.acell('B22').value
@@ -213,6 +218,7 @@ def setChar(id):
       u'lv2': passive_lv2,
       u'lv3': passive_lv3,
       u'lv4': passive_lv4,
+      u'lv5': passive_lv5,
       u'effects':passive_effects
     },
     u'combo1': {
@@ -222,6 +228,8 @@ def setChar(id):
       u'lv1': combo1_lv1,
       u'lv2': combo1_lv2,
       u'lv3': combo1_lv3,
+      u'lv3': combo1_lv3,
+      u'lv4': combo1_lv4,
       u'effects':combo1_effects
     },
     u'combo2': {
@@ -231,6 +239,7 @@ def setChar(id):
       u'lv1': combo2_lv1,
       u'lv2': combo2_lv2,
       u'lv3': combo2_lv3,
+      u'lv4': combo2_lv4,
       u'effects':combo2_effects
     },
     u'bonds_char1': [bond_char1, bond_char1A, bond_char1S, bond_char1SS],
@@ -253,5 +262,5 @@ def setChar(id):
   })
   print(title, 'added')
 
-setChar('0048')
+setChar('0049')
 # setFS('FS010')

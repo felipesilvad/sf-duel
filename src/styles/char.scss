@@ -328,3 +328,13 @@ background-image: url("../Assets/bg/faction-bg2.png");
     margin-left: 1.1rem;
   }
 }
+
+.new-charlist{
+  color: greenyellow;
+  margin-bottom: -1.3rem;
+  margin-right: 1.4rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+  text-align: end;
+  z-index: 20;
+  position: relative
+}
