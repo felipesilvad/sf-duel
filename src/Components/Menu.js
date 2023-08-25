@@ -14,8 +14,9 @@ function BasicExample() {
           <Nav className="me-auto">
             <Nav.Link className='ardela menu-button' href="/">Fighters</Nav.Link>
             <Nav.Link className='ardela menu-button' href="/combo-simulator">Combo Simulator</Nav.Link>
-            <Nav.Link className='ardela menu-button' href="/boss">Bosses</Nav.Link>
             <Nav.Link className='ardela menu-button' href="/fighting-souls">Fighting Souls</Nav.Link>
+            <Nav.Link className='ardela menu-button' href="/puzzles">Puzzles</Nav.Link>
+            <Nav.Link className='ardela menu-button' href="/boss">Bosses</Nav.Link>
             {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

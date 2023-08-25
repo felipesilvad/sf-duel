@@ -338,3 +338,11 @@ background-image: url("../Assets/bg/faction-bg2.png");
   z-index: 20;
   position: relative
 }
+
+.puzzle-video {
+  width: -webkit-fill-available;
+}
+
+.puzzle-video > iframe {
+  width: -webkit-fill-available;
+}

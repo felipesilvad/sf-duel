@@ -20,6 +20,7 @@ effects = ["Armor Break",
 "Dragonrage Curse",
 "Duel",
 "Execute",
+"Fate Divination:",
 "Flame",
 "Flame Penetration",
 "Flame Vulnerability",
@@ -29,6 +30,7 @@ effects = ["Armor Break",
 "Hinder",
 "Love Mark",
 "Joker",
+"Life Divination",
 "Silence",
 "Soul",
 "Stun",
@@ -66,6 +68,7 @@ effects = ["Armor Break",
 "Satsui no Iki",
 "Sharpness",
 "Shock",
+"Sharpness",
 "Steel Thunder",
 "Super Armor",
 "Void Power",
@@ -106,6 +109,8 @@ def setChar(id):
   f_class = ws.acell('A4').value
   f_style = ws.acell('A5').value
 
+  time.sleep(1)
+  
   rank = ws.acell('C1').value
   power = ws.acell('C2').value
   HP = ws.acell('C3').value
@@ -115,6 +120,9 @@ def setChar(id):
 
   sub_title = ws.acell('G1').value
   desc = ws.acell('G2').value
+  
+  time.sleep(1)
+  
 
   super_title = ws.acell('B8').value
   super_target = ws.acell('B9').value
@@ -139,6 +147,9 @@ def setChar(id):
   combo1_lv3 = ws.acell('B19').value
   combo1_lv4 = ws.acell('B20').value
   combo1_effects = []
+  
+  time.sleep(1)
+  
 
   combo2_title = ws.acell('D14').value
   combo2_position = ws.acell('D15').value
@@ -148,6 +159,9 @@ def setChar(id):
   combo2_lv3 = ws.acell('D19').value
   combo2_lv4 = ws.acell('D20').value
   combo2_effects = []
+
+  time.sleep(1)
+
 
   bond_char1 = ws.acell('B22').value
   bond_char1A = ws.acell('B23').value
@@ -165,6 +179,9 @@ def setChar(id):
   bond_char4A = ws.acell('B35').value
   bond_char4S = ws.acell('B36').value
   bond_char4SS = ws.acell('B37').value
+  
+  time.sleep(1)
+  
 
   f_spirit_title = ws.acell('G8').value
   f_spirit_skill = ws.acell('G9').value
@@ -262,5 +279,5 @@ def setChar(id):
   })
   print(title, 'added')
 
-setChar('0049')
+setChar('0050')
 # setFS('FS010')
