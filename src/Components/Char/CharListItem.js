@@ -22,10 +22,10 @@ function CharListItem({char,new_chars}) {
         <div>
           <Image src={require(`../../Assets/faction/${char.faction}.png`)} className='char-list-faction' />
           <h2 className={`ardela char-list__txt`}>
-            {(char.id === '0013'||char.id === '0021'||char.id === '0031'||char.id === '0035'||char.id === '0036'||char.id === '0039'||char.id === '0041'||char.id === '0050') ? (
+            {(char.id === '0013'||char.id === '0021'||char.id === '0031'||char.id === '0035'||char.id === '0036'||char.id === '0039'||char.id === '0041'||char.id === '0050'||char.fit === 'low') ? (
               <div className='d-flex h-100 align-text-bottom mb-0'><h4 className='char-list-sm-title mb-0'>{char.title.split(' ')[0]}</h4><h2 className='font-bolder mb-0'>{char.title.split(' ')[1]}</h2></div>
             ) : (
-              (char.id === '0022'||char.id === '0032'||char.id === '0033'||char.id === '0042'||char.id === '0048'||char.id === '0047') ? (
+              (char.id === '0022'||char.id === '0032'||char.id === '0033'||char.id === '0042'||char.id === '0048'||char.id === '0047'||char.fit === 'mid') ? (
                 <div className='d-flex h-100 align-text-bottom mb-0'>
                   <h6 className='char-list-sm-title mb-0 mt-3'>{char.title.split(' ')[0]}</h6>
                   <h2 className='font-bolder mb-0'>{char.title.split(' ')[1]}</h2>

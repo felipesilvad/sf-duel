@@ -279,5 +279,5 @@ def setChar(id):
   })
   print(title, 'added')
 
-setChar('0050')
+setChar('0052')
 # setFS('FS010')

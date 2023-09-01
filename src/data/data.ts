@@ -11,6 +11,7 @@ export const effectOptions: readonly EffectOption[] = [
   {color:"orange", title:"Bleed", img:true, desc: "Loses HP equal to 1% of max HP per second, up to 10% of ATK. The effect lasts for 10s and stack up to 3 times."},
   {color:"orange", title:"Burn", img:true, desc: "Target loses HP equal to 7% of ATK every second for 15s. Stacks up to 20 times."},
   {color:"orange", title:"Charm", img:true, desc: "The target attacks its allies and cannot use active skills."},
+  {color:"orange", title:"Crismon Scorch", img:false, desc: "Effect Resist decreases by 35% and Crit Resist decreases by 20% for 20s. Cannot be dispelled."},
   {color:"orange", title:"Control", img:false, desc: "Includes Silence, Stun, Charm, and Taunt effects."},
   {color:"orange", title:"Dazzle", img:false, desc:"Removes 1x when taking DMG, additionally taking True DMG equal to 40% of Fashion Sakura's ATK. Stacks up to 10 times. When Fashion Sakura takes fatal DMG, all Dazzle stacks expire and are removed."},
   {color:"orange", title:"Delusion", img:false, desc:"The target takes True DMG equal to 30% of ATK./n Removes the |Weaken| effect from the enemy target and inflicts |Stun|/n The duration of the |Stun| scales with the number of |Weaken| stacks removed"},
