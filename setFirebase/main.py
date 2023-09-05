@@ -10,8 +10,10 @@ from storage import storage
 effects = ["Armor Break",
 "Black Rose Mark",
 "Bleed",
+"Bloody Wings - Feng Shui Engine",
 "Burn",
 "Charm",
+"Crismon Scorch",
 "Control",
 "Dazzle",
 "Delusion",
@@ -31,6 +33,7 @@ effects = ["Armor Break",
 "Love Mark",
 "Joker",
 "Life Divination",
+"Life Steal Rate",
 "Silence",
 "Soul",
 "Stun",
@@ -279,5 +282,5 @@ def setChar(id):
   })
   print(title, 'added')
 
-setChar('0052')
+setChar('0053')
 # setFS('FS010')
