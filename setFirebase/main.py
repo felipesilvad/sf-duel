@@ -69,6 +69,7 @@ effects = ["Armor Break",
 "Saber",
 "Sakura Rain",
 "Satsui no Iki",
+"Satsui no Iki - Oni",
 "Sharpness",
 "Shock",
 "Sharpness",
@@ -151,8 +152,11 @@ def setChar(id):
   combo1_lv4 = ws.acell('B20').value
   combo1_effects = []
   
-  time.sleep(1)
+  exclusive_title = ws.acell('F21').value
+  exclusive_lv1 = ws.acell('F22').value
+  exclusive_lv2 = ws.acell('F23').value  
   
+  time.sleep(1)
 
   combo2_title = ws.acell('D14').value
   combo2_position = ws.acell('D15').value
@@ -196,7 +200,7 @@ def setChar(id):
   f_spirit_power = ws.acell('G15').value
   f_spirit_desc = ws.acell('G16').value
   values_list = ws.col_values(5)
-  f_spirit_status = values_list[slice(8,1000)]
+  f_spirit_status = values_list[slice(8,16)]
   f_spirit_effects = []
 
   for effect in effects:
@@ -262,6 +266,11 @@ def setChar(id):
       u'lv4': combo2_lv4,
       u'effects':combo2_effects
     },
+    u'exclusive': {
+      u'title': exclusive_title,
+      u'lv1': exclusive_lv1,
+      u'lv2': exclusive_lv2,
+    },
     u'bonds_char1': [bond_char1, bond_char1A, bond_char1S, bond_char1SS],
     u'bonds_char2':  [bond_char2, bond_char2A, bond_char2S, bond_char2SS],
     u'bonds_char3': [bond_char3, bond_char3A, bond_char3S, bond_char3SS],
@@ -282,5 +291,5 @@ def setChar(id):
   })
   print(title, 'added')
 
-setChar('0053')
+setChar('0055')
 # setFS('FS010')

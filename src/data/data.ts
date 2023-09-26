@@ -68,6 +68,7 @@ export const effectOptions: readonly EffectOption[] = [
   {color:"blue", title:"Saber", img:true, desc:"Each stack allows the fighter's attacks to ignore 7% of enemy DEF. Stacks up to 5 times and cannot be dispelled."},
   {color:"blue", title:"Sakura Rain", img:false, desc:"Removes 1x Sakura Rain when taking DMG, healing all teammates by 25% of the fighter's ATK. Stacks up to 10 times."},
   {color:"blue", title:"Satsui no Iki", img:false, desc:"(Effects described here apply only to Evil Ryu's |Satsui no Iki|)/nFighter takes 10% less |Soul| DMG and 5% less DMG for all other types of DMG. Their Pressure is also increased by 10%. |Satsui no Iki| lasts 30s and can stack up to 10 times."},
+  {color:"blue", title:"Satsui no Iki - Oni", img:false, desc:"Exclusive to oni. Increases Soul DMG by 6% and Crit Rate by 4% for 30s. Stacks up to 10 times."},
   {color:"blue", title:"Sharpness", img:false},
   {color:"blue", title:"Shock", img:true,desc: "Target takes |Thunder| DMG equal to 10% of ATK for each attack received for 6s. Stacks up to 10 times."},
   {color:"blue", title:"Sharpness", img:false},

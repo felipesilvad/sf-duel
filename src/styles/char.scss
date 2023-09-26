@@ -166,13 +166,16 @@ background-image: url("../Assets/bg/faction-bg2.png");
 .skl-Super {color: #fcf17b;}
 .skl-Passive {color: #96e86a;}
 .skl-Combo {color: #4ce2c5;}
+.skl-Exclusive {color: #c677ee;}
+
+.green-txt {color: #96e86a;}
 
 .skill-img-Super {width: 6rem;}
 .skill-img-Combo {
   width: 4.5rem;
   margin: 0 0.4rem 0 0.8rem;
 }
-.skill-img-Passive {
+.skill-img-Passive, .skill-img-Exclusive {
   width: 4.5rem;
   margin: 0 0.5rem;
 }
@@ -199,6 +202,10 @@ background-image: url("../Assets/bg/faction-bg2.png");
 }
 .skbg-Combo, .skbg-Passive {
   background-image: url("../Assets/bg/skill-bg2.png");
+  padding-left: 0.5rem;
+}
+.skbg-Exclusive {
+  background-image: url("../Assets/bg/skill-bg3.png");
   padding-left: 0.5rem;
 }
 
@@ -345,4 +352,9 @@ background-image: url("../Assets/bg/faction-bg2.png");
 
 .puzzle-video > iframe {
   width: -webkit-fill-available;
+}
+
+
+.car-icon {
+  height: fit-content;
 }

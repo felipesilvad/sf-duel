@@ -12,6 +12,7 @@ import CharFSComponent from './CharFS';
 import CharSideMenu from './CharSideMenu';
 import CharSkillTxtComponent from './CharSkillTxt';
 import AdComponent from '../Ads/AdComponent';
+import CharSkillExclusive from './CharSkillExclusive';
 
 
 function CharComponent() {
@@ -136,6 +137,8 @@ function CharComponent() {
              id={id} skill={char.combo2} label="Combo" img_n="c2" />
             <CharSkillComponent getEffect={getEffect}
              id={id} skill={char.passive} label="Passive" img_n="p" />
+             <CharSkillExclusive
+             id={id} skill={char.exclusive} label="Exclusive" img_n="e" />
           </Col>
           <Col lg>
             <h3 className='char-stat__bg ardela text-center mb-2'>Fighting Spirit</h3>

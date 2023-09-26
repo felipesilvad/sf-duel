@@ -34,6 +34,12 @@ function CharSkillComponent({id, skill, label, img_n, getEffect}) {
                   <CharSkillTxtComponent txt={skill.lv4} />
                 </>
               )}
+              {skill.lv5&&(
+                <>
+                  <b className='skill-label lv-color'>Lv.5</b><br />
+                  <CharSkillTxtComponent txt={skill.lv5} />
+                </>
+              )}
             </div>
           </div>
           {skill.effects&&(
